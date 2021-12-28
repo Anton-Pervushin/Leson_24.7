@@ -1,3 +1,4 @@
-public class Main {
-     System.out.println()
+public static void main(String[] args) {
+        StudyProfile MEDICINE = StudyProfile.valueOf("Медицина");
+        System.out.println(MEDICINE);
 }
