@@ -1,5 +1,5 @@
-
 public class University {
+
     private String id;
     private String fullName;
     private String shortName;
@@ -7,14 +7,13 @@ public class University {
     private StudyProfile mainProfile;
 
     public University() {
-
     }
 
     public String getId() {
         return id;
     }
 
-    public University setId(String id){
+    public University setId(String id) {
         this.id = id;
         return this;
     }
@@ -55,17 +54,9 @@ public class University {
         return this;
     }
 
-    public StudyProfile getMainProfile() {
-        return mainProfile;
-    }
-
-    public University setMainProfile(StudyProfile mainProfile) {
-        this.mainProfile = mainProfile;
-        return this;
-    }
-
+    @Override
     public String toString() {
-        return String.format("id = %s, fullName = %s, yearOfFoundation = %s, mainProfile = %s",
+        return String.format("id = %s, fullName = %s, shortName = %s, yearOfFoundation = %s, mainProfile = %s",
                 this.id,
                 this.fullName,
                 this.shortName,

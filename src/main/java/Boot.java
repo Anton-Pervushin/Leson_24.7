@@ -3,17 +3,23 @@ import java.io.IOException;
 import java.util.List;
 
 public class Boot {
+
     public static void main(String[] args) throws IOException {
+
         List<University> universities =
                 XlsReader.readXlsUniversities("src/main/resources/universityInfo.xlsx");
-        for(University university : universities) {
-            System.out.println(university);
-        }
+        UniversityComparator universityComparator =
+                ComparatorUtil.getUniversityComparator(UniversityComparatorType.YEAR);
+        universities.stream()
+                .sorted(universityComparator)
+                .forEach(System.out::println);
+
         List<Student> students =
                 XlsReader.readXlsStudents("src/main/resources/universityInfo.xlsx");
-        for(Student student : students) {
-            System.out.println(student);
-        }
+        StudentComparator studentComparator =
+                ComparatorUtil.getStudentComparator(StudentComparatorType.AVG_EXAM_SCORE);
+        students.stream()
+                .sorted(studentComparator)
+                .forEach(System.out::println);
     }
-    }
-
+}
