@@ -1,49 +1,75 @@
+
 public class University {
-    String id;
-    String fullName;
-    String shortName;
-    int yearOfFoundation;
+    private String id;
+    private String fullName;
+    private String shortName;
+    private int yearOfFoundation;
+    private StudyProfile mainProfile;
+
+    public University() {
+
+    }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public University setId(String id){
         this.id = id;
+        return this;
     }
 
     public String getFullName() {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    public University setFullName(String fullName) {
         this.fullName = fullName;
+        return this;
     }
 
     public String getShortName() {
         return shortName;
     }
 
-    public void setShortName(String shortName) {
+    public University setShortName(String shortName) {
         this.shortName = shortName;
+        return this;
     }
 
     public int getYearOfFoundation() {
         return yearOfFoundation;
     }
 
-    public void setYearOfFoundation(int yearOfFoundation) {
+    public University setYearOfFoundation(int yearOfFoundation) {
         this.yearOfFoundation = yearOfFoundation;
+        return this;
     }
 
     public StudyProfile getMainProfile() {
         return mainProfile;
     }
 
-    public void setMainProfile(StudyProfile mainProfile) {
+    public University setMainProfile(StudyProfile mainProfile) {
         this.mainProfile = mainProfile;
+        return this;
     }
 
-    StudyProfile mainProfile;
+    public StudyProfile getMainProfile() {
+        return mainProfile;
+    }
 
+    public University setMainProfile(StudyProfile mainProfile) {
+        this.mainProfile = mainProfile;
+        return this;
+    }
+
+    public String toString() {
+        return String.format("id = %s, fullName = %s, yearOfFoundation = %s, mainProfile = %s",
+                this.id,
+                this.fullName,
+                this.shortName,
+                this.yearOfFoundation,
+                this.mainProfile.getProfileName());
+    }
 }
